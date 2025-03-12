@@ -1,5 +1,9 @@
 # GitHub Repository Explorer
 
+## ⚠️ Important Note
+
+GitHub GraphQL API uses cursor pagination, which doesn't support per-page pagination, so some tech requirements can't be satisfied. I guess they're using rest api for main page.
+
 ## 🚀 Getting Started
 
 ### Prerequisites
