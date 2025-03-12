@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+:root {
+    font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+
+    color-scheme: light dark;
+    color: rgba(255, 255, 255, 0.87);
+    background-color: var(--theme-primary);
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    /* --theme-accent: #7289da; */
+    --theme-accent: #646cff;
+    --theme-accent-foreground: #ffffff;
+    --theme-primary: #191a1c;
+    --theme-primary-foreground: #ffffff;
+    --theme-primary-foreground-muted: #ffffffcc;
+    --theme-secondary: #252628;
+    --theme-secondary-foreground: #ffffff;
+    --theme-secondary-foreground-muted: #ffffff8f;
+    --theme-border: #424549;
+    --theme-input: #252628;
+}
+
+@theme {
+    --color-accent: var(--theme-accent);
+    --color-accent-foreground: var(--theme-accent-foreground);
+    --color-primary: var(--theme-primary);
+    --color-primary-foreground: var(--theme-primary-foreground);
+    --color-primary-foreground-muted: var(--theme-primary-foreground-muted);
+    --color-secondary: var(--theme-secondary);
+    --color-secondary-foreground: var(--theme-secondary-foreground);
+    --color-secondary-foreground-muted: var(--theme-secondary-foreground-muted);
+    --color-border: var(--theme-border);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-width: 320px;
+    min-height: 100vh;
+    height: 100%;
+}
+
+h1 {
+    font-size: 3.2em;
+    line-height: 1.1;
+}
+
+#root {
+    width: 100%;
+    height: 100%;
+}

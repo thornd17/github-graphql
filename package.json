@@ -1,0 +1,51 @@
+{
+  "name": "tool-kit",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development concurrently --names \"vite,gql-gen\" \"vite\" \"graphql-codegen --watch\"",
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "compile-gql": "graphql-codegen",
+    "load-github-gql-schema": "node ./scripts/update-github-gql-schema.js"
+  },
+  "dependencies": {
+    "@apollo/client": "^3.13.2",
+    "@graphql-codegen/cli": "^5.0.5",
+    "@graphql-typed-document-node/core": "^3.2.0",
+    "@parcel/watcher": "^2.5.1",
+    "@tailwindcss/vite": "^4.0.11",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "dayjs": "^1.11.13",
+    "effector": "^23.3.0",
+    "effector-react": "^23.3.0",
+    "graphql": "^16.10.0",
+    "lodash.debounce": "^4.0.8",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-error-boundary": "^5.0.0",
+    "react-router": "^7.3.0",
+    "tailwind-merge": "^3.0.2",
+    "tailwindcss": "^4.0.11"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.21.0",
+    "@types/lodash.debounce": "^4.0.9",
+    "@types/node": "^22.13.9",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "@vitejs/plugin-react": "^4.3.4",
+    "concurrently": "^9.1.2",
+    "cross-env": "^7.0.3",
+    "eslint": "^9.21.0",
+    "eslint-plugin-react-hooks": "^5.1.0",
+    "eslint-plugin-react-refresh": "^0.4.19",
+    "globals": "^15.15.0",
+    "typescript": "~5.7.2",
+    "typescript-eslint": "^8.24.1",
+    "vite": "^6.2.0"
+  }
+}
