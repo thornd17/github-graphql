@@ -1,54 +1,45 @@
-# React + TypeScript + Vite
+# GitHub Repository Explorer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 🚀 Getting Started
 
-Currently, two official plugins are available:
+### Prerequisites
+- Node.js (version 18 or higher) (used v22.13.0)
+- pnpm (package manager)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Installation
 
-## Expanding the ESLint configuration
+1. **Install dependencies**:
+   ```bash
+   pnpm install
+   ```
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+2. **Set up GitHub GraphQL Schema**:
+   - Run the following command to automatically load the schema:
+     ```bash
+     pnpm load-github-gql-schema
+     ```
+   - Alternatively, you can manually download the schema from [GitHub's Public Schema](https://docs.github.com/en/graphql/overview/public-schema) and place it in:
+     ```
+     src/shared/api/graphql/github-schema.docs.graphql
+     ```
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+3. **Configure Environment Variables**:
+   - Copy `.env.example` to `.env`:
+     ```bash
+     cp .env.example .env
+     ```
+   - **GitHub Personal Access Token (Optional but Recommended)**:
+     - While optional, having a token enables additional features:
+       - Access to private repositories (if granted)
+       - Higher API rate limits (5000 requests/hour vs 60 or 0 in some cases for unauthenticated)
+       - Ability to fetch current user's repositories
+     - To create a token:
+       - Follow the [GitHub Token Creation Guide](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-personal-access-token-classic)
+       - Add your token to the `.env` file
+     - Note: The application will work without a token, but with limited functionality and stricter rate limits
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+### Running the Application
+Start the development server:
+```bash
+pnpm dev
 ```
